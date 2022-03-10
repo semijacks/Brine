@@ -2,23 +2,11 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../App';
-import AppLoading from 'expo-app-loading';
-import { ModernAntiqua_400Regular as ModernAntiqua } from '@expo-google-fonts/modern-antiqua';
-import { useFonts } from 'expo-font';
 import { CarouselImg1, HomepageArrow, CarouselImg2 } from '../assets/images';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'Carousel'>;
 
 export default function HomeScreen({ navigation }: Props) {
-  let [fontsLoaded] = useFonts({
-    Muller: require('../assets/fonts/Muller-Trial-Regular.otf'),
-    ModernAntiqua,
-  });
-
-  if (!fontsLoaded) {
-    return <AppLoading />;
-  }
-
   return (
     <View style={styles.container}>
       <Text style={styles.headerText}>Make Payments With Cryptocurrency</Text>

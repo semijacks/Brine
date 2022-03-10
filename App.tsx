@@ -6,6 +6,8 @@ import {
   CreateAccountScreen,
   LoginScreen,
 } from './screens';
+import { useFonts } from 'expo-font';
+import AppLoading from 'expo-app-loading';
 
 export type RootStackParamList = {
   Home: undefined; // undefined because you aren't passing any params to the home screen
@@ -17,6 +19,14 @@ export type RootStackParamList = {
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 export default function App() {
+  let [fontsLoaded] = useFonts({
+    Muller: require('./assets/fonts/Muller-Trial-Regular.otf'),
+    ModernAntiqua: require('./assets/fonts/ModernAntiqua_Regular.otf'),
+  });
+
+  if (!fontsLoaded) {
+    return <AppLoading />;
+  }
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName='Carousel'>

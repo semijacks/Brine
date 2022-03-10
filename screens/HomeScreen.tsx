@@ -1,22 +1,11 @@
 import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import AppLoading from 'expo-app-loading';
-import { useFonts } from 'expo-font';
 import { RootStackParamList } from '../App';
 import { WelcomeIllustration } from '../assets/images';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'Home'>;
 
 export default function HomeScreen({ navigation }: Props) {
-  let [fontsLoaded] = useFonts({
-    Muller: require('../assets/fonts/Muller-Trial-Regular.otf'),
-    ModernAntiqua: require('../assets/fonts/ModernAntiqua_Regular.otf'),
-  });
-
-  if (!fontsLoaded) {
-    return <AppLoading />;
-  }
-
   return (
     <View style={styles.container}>
       <Text style={styles.headerText} textBreakStrategy='simple'>
