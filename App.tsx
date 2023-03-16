@@ -21,6 +21,7 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 export default function App() {
   let [fontsLoaded] = useFonts({
     Muller: require('./assets/fonts/Muller-Trial-Regular.otf'),
+    MullerBold: require('./assets/fonts/Muller-Trial-Bold.otf'),
     ModernAntiqua: require('./assets/fonts/ModernAntiqua_Regular.otf'),
   });
 
